@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .logo {
+    @apply h-24 p-6 will-change-[filter] transition-[filter] delay-300;
+  }
+
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded-lg border border-solid border-transparent py-[0.6rem] px-[1.2rem] font-medium bg-[#f9f9f9] dark:bg-[#1a1a1a] cursor-pointer transition hover:border-[#646cff] focus:focus-visible:outline-4;
+  }
+}
