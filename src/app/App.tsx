@@ -9,7 +9,9 @@ const App: FC = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <main className="mt-10">
+        <Outlet />
+      </main>
       <Footer />
     </>
   );

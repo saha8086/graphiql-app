@@ -2,5 +2,9 @@
   "vite-welcome": {
     "edit": "Отредактируйте",
     "and": "и"
-  }
+  },
+  "change-language": "поменять язык",
+  "sign-in-button": "войти",
+  "sign-out-button": "выйти",
+  "sign-up-button": "зарегистрироваться"
 }
