@@ -1,0 +1,66 @@
+{
+  "name": "graphiql-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint:prettier": "prettier --ignore-path .gitignore --ignore-unknown --check",
+    "lint:eslint": "eslint --ignore-path .gitignore",
+    "typecheck": "tsc --noEmit",
+    "lint": "npm run lint:prettier -- . & npm run typecheck & npm run lint:eslint -- .",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "npm run lint:eslint",
+    "*": "npm run lint:prettier"
+  },
+  "engines": {
+    "node": "^18.16.0"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "firebase": "^9.21.0",
+    "graphql": "^16.6.0",
+    "i18next": "^22.4.15",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-i18next": "^12.2.2",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.11.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "@vitejs/plugin-legacy": "^4.0.3",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.5",
+    "husky": "^8.0.3",
+    "jsdom": "^22.0.0",
+    "postcss": "^8.4.23",
+    "postcss-import": "^15.1.0",
+    "prettier": "2.8.8",
+    "tailwindcss": "^3.3.2",
+    "terser": "^5.17.3",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.5",
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.30.1"
+  },
+  "license": "MIT"
+}
