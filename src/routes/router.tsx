@@ -1,16 +1,17 @@
 import { lazy } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
 import { withLoading } from 'src/hocs/withLoading';
+import NotFoundPage from 'src/pages/NotFoundPage';
 
 const App = withLoading(lazy(() => import('src/app/App')));
-const WelcomePage = withLoading(lazy(() => import('src/pages/WelcomePage/WelcomePage')));
+const WelcomePage = withLoading(lazy(() => import('src/pages/WelcomePage')));
 
-export const router = createBrowserRouter([
+export const routes: RouteObject[] = [
   {
     path: '/',
     element: <App />,
-    // errorElement: <NotFoundPage/> // todo: https://github.com/saha8086/graphiql-app/issues/3
+    errorElement: <NotFoundPage />,
     children: [
       {
         path: '/',
@@ -27,4 +28,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
+
+export const router = createBrowserRouter(routes);

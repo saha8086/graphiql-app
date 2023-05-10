@@ -5,6 +5,9 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "baseUrl": ".",
+    "allowJs": false,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
