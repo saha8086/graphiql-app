@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 import { StrictMode } from 'react';
 
-import { store } from './app/store';
-import { router } from './routes/router';
+import { store } from '@app/store';
+import { router } from '@routes/router';
 
 import './i18n';
 import './index.css';

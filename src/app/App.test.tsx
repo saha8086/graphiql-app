@@ -2,7 +2,7 @@ import { describe, it } from 'vitest';
 import { render, waitFor } from '@testing-library/react';
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 
-import { routes } from 'src/routes/router';
+import { routes } from '@routes/router';
 
 describe('App', () => {
   it('Renders hello world', async () => {

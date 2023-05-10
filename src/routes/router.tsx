@@ -1,11 +1,11 @@
 import { lazy } from 'react';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
-import { withLoading } from 'src/hocs/withLoading';
-import NotFoundPage from 'src/pages/NotFoundPage';
+import { withLoading } from '@hocs/withLoading';
+import NotFoundPage from '@pages/NotFoundPage';
 
-const App = withLoading(lazy(() => import('src/app/App')));
-const WelcomePage = withLoading(lazy(() => import('src/pages/WelcomePage')));
+const App = withLoading(lazy(() => import('@app/App')));
+const WelcomePage = withLoading(lazy(() => import('@pages/WelcomePage')));
 
 export const routes: RouteObject[] = [
   {

@@ -4,7 +4,16 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@hocs/*": ["./src/hocs/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@routes/*": ["./src/routes/*"]
+    },
     "allowJs": false,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
@@ -25,6 +34,6 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false
   },
-  "include": ["src"],
+  "include": ["./src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

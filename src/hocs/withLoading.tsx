@@ -1,6 +1,6 @@
 import { FC, Suspense } from 'react';
 
-import { Loading } from 'src/components/Loading/Loading';
+import { Loading } from '@components/Loading/Loading';
 
 export const withLoading =
   <Props extends object>(Component: FC<Props>) =>
