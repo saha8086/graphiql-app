@@ -12,7 +12,8 @@
       "@hocs/*": ["./src/hocs/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@pages/*": ["./src/pages/*"],
-      "@routes/*": ["./src/routes/*"]
+      "@routes/*": ["./src/routes/*"],
+      "@services/*": ["./src/services/*"]
     },
     "allowJs": false,
     "forceConsistentCasingInFileNames": true,
