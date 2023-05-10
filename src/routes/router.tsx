@@ -6,6 +6,7 @@ import NotFoundPage from '@pages/NotFoundPage';
 
 const App = withLoading(lazy(() => import('@app/App')));
 const WelcomePage = withLoading(lazy(() => import('@pages/WelcomePage')));
+const GraphQLPage = withLoading(lazy(() => import('@pages/GraphQLPage')));
 
 export const routes: RouteObject[] = [
   {
@@ -17,6 +18,11 @@ export const routes: RouteObject[] = [
         path: '/',
         index: true,
         element: <WelcomePage />,
+      },
+      {
+        path: '/graphql',
+        index: true,
+        element: <GraphQLPage />,
       },
       {
         path: '/sign-in',
