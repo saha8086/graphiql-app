@@ -2,5 +2,9 @@
   "vite-welcome": {
     "edit": "Edit",
     "and": "and"
-  }
+  },
+  "change-language": "change language",
+  "sign-in-button": "sign in",
+  "sign-out-button": "sign out",
+  "sign-up-button": "sign up"
 }
