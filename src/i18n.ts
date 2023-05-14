@@ -5,6 +5,12 @@ import { initReactI18next } from 'react-i18next';
 import translationEN from './locales/en/translation.json';
 import translationRU from './locales/ru/translation.json';
 
+declare module 'i18next' {
+  interface CustomTypeOptions {
+    returnNull: false;
+  }
+}
+
 // todo: https://github.com/saha8086/graphiql-app/issues/1
 void i18next
   .use(LanguageDetector)
@@ -20,6 +26,10 @@ void i18next
     },
     debug: import.meta.env.DEV,
     fallbackLng: 'en',
+    returnNull: false,
+    interpolation: {
+      escapeValue: false,
+    },
   });
 
 export default i18next;
