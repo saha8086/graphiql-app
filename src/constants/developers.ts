@@ -13,7 +13,7 @@ const DEVELOPERS: IDeveloper[] = [
   {
     name: 'Buhlak Alexandr',
     github: 'https://github.com/saha80',
-    image: 'https://postimg.cc/PLnNSN1y',
+    image: 'https://i.postimg.cc/s2vSDhXk/a291e4874e70df86094bdaf99c6977df.jpg',
   },
   {
     name: 'Savenko Mikhail',
