@@ -1,5 +1,5 @@
 import TeamSection from '@components/TeamSection/TeamSection';
-import StartSection from '@components/StartSection/StartSection';
+import StartSection from '@components/IntroductionSection/IntroductionSection';
 import { useTranslation } from 'react-i18next';
 
 const WelcomePage = () => {
