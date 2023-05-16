@@ -1,23 +1,26 @@
+import { useTranslation } from 'react-i18next';
+
 const stats = [
   {
-    name: 'Send a GraphQL query to your API and get exactly what you need, nothing more and nothing less.',
-    value: 'Ask for what you need',
+    name: 'name1',
+    value: 'value1',
   },
   {
-    name: 'While typical REST APIs require loading from multiple URLs, GraphQL APIs get all the data your app needs in a single request',
-    value: 'Single request',
+    name: 'name2',
+    value: 'value2',
   },
   {
-    name: 'Add new fields and types to your GraphQL API without impacting existing queries',
-    value: 'Evolve your API',
+    name: 'name3',
+    value: 'value3',
   },
   {
-    name: 'Facebook`s mobile apps have been powered by GraphQL since 2012. A GraphQL now available in many environments.',
-    value: 'Who’s using GraphQL?',
+    name: 'name4',
+    value: 'value4',
   },
 ];
 
-const TitleSection = () => {
+const StartSection = () => {
+  const { t } = useTranslation();
   return (
     <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
       <img
@@ -49,26 +52,23 @@ const TitleSection = () => {
           }}
         />
       </div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 min-h-[610px]">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">GraphiQL</h1>
           <h2 className="mt-6 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-            GraphiQL is a playground/IDE for graphQL requests.
+            {t('startSection.subTitle')}
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            GraphQL is a query language for APIs and a runtime for fulfilling those queries with
-            your existing data. GraphQL provides a complete and understandable description of the
-            data in your API, gives clients the power to ask for exactly what they need and nothing
-            more, makes it easier to evolve APIs over time, and enables powerful developer tools. .
-          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-300">{t('startSection.description')}</p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
           <dl className="mt-16 items-start grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.name} className="flex flex-col-reverse">
-                <dt className="text-base leading-7 text-gray-300">{stat.name}</dt>
+                <dt className="text-base leading-7 text-gray-300">
+                  {t(`startSection.columns.${stat.name}`)}
+                </dt>
                 <dd className="text-2xl font-bold leading-9 tracking-tight text-white">
-                  {stat.value}
+                  {t(`startSection.columns.${stat.value}`)}
                 </dd>
               </div>
             ))}
@@ -79,4 +79,4 @@ const TitleSection = () => {
   );
 };
 
-export default TitleSection;
+export default StartSection;
