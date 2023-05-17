@@ -7,6 +7,8 @@ import NotFoundPage from '@pages/NotFoundPage';
 const App = withLoading(lazy(() => import('@app/App')));
 const WelcomePage = withLoading(lazy(() => import('@pages/WelcomePage')));
 const GraphQLPage = withLoading(lazy(() => import('@pages/GraphQLPage')));
+const SignInPage = withLoading(lazy(() => import('@pages/SignInPage/SignInPage')));
+const SignUpPage = withLoading(lazy(() => import('@pages/SignUpPage/SignUpPage')));
 
 export const routes: RouteObject[] = [
   {
@@ -26,11 +28,11 @@ export const routes: RouteObject[] = [
       },
       {
         path: '/sign-in',
-        // element: <SignInPage/>, // todo: https://github.com/saha8086/graphiql-app/issues/9
+        element: <SignInPage />, // todo: https://github.com/saha8086/graphiql-app/issues/9
       },
       {
         path: '/sign-up',
-        // element: <SignUpPage/>, // todo: https://github.com/saha8086/graphiql-app/issues/10
+        element: <SignUpPage />, // todo: https://github.com/saha8086/graphiql-app/issues/10
       },
     ],
   },
