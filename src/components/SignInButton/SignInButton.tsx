@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 export interface SignInButtonProps {
   className?: string;
@@ -11,7 +12,7 @@ export const SignInButton: FC<SignInButtonProps> = (props) => {
 
   return (
     <button {...props} type="button">
-      {t('sign-in-button')}
+      <Link to="/sign-in">{t('sign-in-button')}</Link>
     </button>
   );
 };
