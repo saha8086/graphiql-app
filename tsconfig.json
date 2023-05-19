@@ -14,7 +14,8 @@
       "@pages/*": ["./src/pages/*"],
       "@routes/*": ["./src/routes/*"],
       "@services/*": ["./src/services/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@consts/*": ["./src/constants/*"]
     },
     "allowJs": false,
     "forceConsistentCasingInFileNames": true,

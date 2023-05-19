@@ -1,0 +1,12 @@
+.queryType {
+  color: hsl(219, 61%, 61%);
+}
+
+.gray-text {
+  color: hsl(219, 28%, 32%, .76);
+}
+
+.docs .queryType:hover {
+cursor: pointer;
+text-decoration: underline;
+}
