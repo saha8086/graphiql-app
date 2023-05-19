@@ -24,9 +24,9 @@ type Argument = {
 };
 
 //todo
-const expandArgs = (args: Argument[]) => {
-  return;
-};
+// const expandArgs = (args: Argument[]) => {
+//   return;
+// };
 
 const expandTree = (TreeNode: object | undefined): ReactNode[] => {
   if (!TreeNode) {

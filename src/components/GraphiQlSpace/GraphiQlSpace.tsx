@@ -43,16 +43,17 @@ function fetcher(params: FetcherType): Promise<ApiResponse> {
 }
 
 export const GraphiQlSpace: FC = () => {
-  const [docsDisplay, toggleDocsDisplay] = useState<boolean>(false);
   const [schema, setSchema] = useState<GraphQLSchema>();
-  const IntrospectionQuery: FetcherType = { query: getIntrospectionQuery() };
+  const [docsDisplay, setDocsDisplay] = useState<boolean>(false);
 
   useEffect(() => {
+    const IntrospectionQuery: FetcherType = { query: getIntrospectionQuery() };
     const result = fetcher(IntrospectionQuery)
       .then((result) => result.data && setSchema(buildClientSchema(result.data.data)))
       .catch((err) => console.log('failed', err))
       .then(() => console.log('Schema = ', schema));
     console.log(result);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -61,7 +62,7 @@ export const GraphiQlSpace: FC = () => {
       <div className="h-[71vh] flex flex-row bg-red-50">
         <aside className="w-[55px] bg-white flex flex-col ">
           <button
-            onClick={() => toggleDocsDisplay(!docsDisplay)}
+            onClick={() => setDocsDisplay(!docsDisplay)}
             className="mx-auto mt-5 bg-white w-[35px] h-[35px] flex justify-center items-center rounded-lg hover:bg-slate-300 ease-linear duration-150"
           >
             <svg height="1.5em" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">

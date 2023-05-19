@@ -1,4 +1,4 @@
-import { GraphQLFieldMap, GraphQLSchema } from 'graphql';
+import { GraphQLSchema } from 'graphql';
 import { FC } from 'react';
 
 import './GraphiQlDocs.css';
