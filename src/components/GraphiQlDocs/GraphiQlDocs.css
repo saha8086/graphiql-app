@@ -6,7 +6,15 @@
   color: hsl(219, 28%, 32%, .76);
 }
 
-.docs .queryType:hover {
+.red-text {
+  color: hsl(347, 100%, 71%);
+}
+
+.yellow-text {
+  color: hsl(40, 100%, 46%);
+}
+
+.docs .queryType:hover, .docs .yellow-text:hover, .docs .gray-text.back:hover {
 cursor: pointer;
 text-decoration: underline;
 }

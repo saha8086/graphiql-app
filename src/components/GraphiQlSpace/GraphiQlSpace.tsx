@@ -52,7 +52,6 @@ export const GraphiQlSpace: FC = () => {
       .then((result) => result.data && setSchema(buildClientSchema(result.data.data)))
       .catch((err) => console.log('failed', err))
       .then(() => console.log('Schema = ', schema));
-    console.log(result);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
