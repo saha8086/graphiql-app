@@ -1,5 +1,5 @@
 import { GraphQLSchema } from 'graphql';
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
 
 import './GraphiQlDocs.css';
 
