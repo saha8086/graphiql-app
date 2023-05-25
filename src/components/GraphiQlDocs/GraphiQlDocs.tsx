@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import './GraphiQlDocs.css';
 
-import expandTree from './Expander';
+import expandTree from './Expander/Expander';
 import { useAppSelector } from '@hooks/redux';
 import DocsPage from '@components/DocsPage/DocsPage';
 import { store } from '@app/store';
@@ -11,8 +11,8 @@ import { store } from '@app/store';
 const firstPage = (
   <DocsPage name="Docs">
     <p>A GraphQL schema provides a root type for each kind of operation.</p>
-    <h3>Root Types</h3>
-    <p>
+    <h3 className="my-2 font-semibold">Root Types</h3>
+    <p className="blue-text">
       query:{' '}
       <span className="yellow-text" onClick={() => expandTree(store.getState().docsPages.schema)}>
         Query
@@ -32,7 +32,7 @@ const GraphiQlDocs: FC<GraphiQlDocsProps> = ({ schema }) => {
   const pagesList = useAppSelector((state) => state.docsPages.openedPages);
 
   return (
-    <div className="docs bg-white min-w-[200px] max-w-[400px] flex flex-col grow-[0.1] shrink-[1] p-2 overflow-y-scroll">
+    <div className="docs bg-white min-w-[200px] max-w-[400px] flex flex-col grow-[0.1] shrink-[1] p-2 pr-[50px] overflow-y-scroll">
       {schema && pagesList[pagesList.length - 1].node}
     </div>
   );
