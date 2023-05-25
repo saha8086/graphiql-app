@@ -50,7 +50,6 @@ export const GraphiQlSpace: FC = () => {
     const IntrospectionQuery: FetcherType = { query: getIntrospectionQuery() };
     fetcher(IntrospectionQuery)
       .then((result) => result.data && setSchema(buildClientSchema(result.data.data)))
-      .then(() => console.log('Schema = ', schema))
       .catch((err) => console.log('failed', err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

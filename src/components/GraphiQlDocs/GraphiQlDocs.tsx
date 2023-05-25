@@ -28,7 +28,6 @@ type GraphiQlDocsProps = {
 const GraphiQlDocs: FC<GraphiQlDocsProps> = ({ schema }) => {
   const fields = schema.getQueryType()?.getFields() as object;
   store.dispatch({ type: 'docsPages/setSchema', payload: fields });
-  console.log(store.getState());
   const pagesList = useAppSelector((state) => state.docsPages.openedPages);
 
   return (
