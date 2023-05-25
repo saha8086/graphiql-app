@@ -9,7 +9,7 @@ const App: FC = () => {
   return (
     <>
       <Header />
-      <main className="mt-10">
+      <main>
         <Outlet />
       </main>
       <Footer />

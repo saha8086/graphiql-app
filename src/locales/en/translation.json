@@ -3,6 +3,10 @@
     "edit": "Edit",
     "and": "and"
   },
+  "change-language": "change language",
+  "sign-in-button": "sign in",
+  "sign-out-button": "sign out",
+  "sign-up-button": "sign up",
   "change-language": "Change language",
   "sign-in-button": "Sign In",
   "sign-out-button": "Sign Out",
@@ -132,5 +136,37 @@
     "missing-recaptcha-version": "missing recaptcha version",
     "invalid-recaptcha-version": "invalid recaptcha version",
     "invalid-req-type": "invalid request type"
+
+  },
+  "start": "Start",
+  "teamSection": {
+    "title": "Meet our team",
+    "description": "We are students of RS School. Completed the task within the RS School React course.",
+    "IliasovDamir": "Iliasov Damir",
+    "BuhlakAlexandr": "Buhlak Alexandr",
+    "SavenkoMikhail": "Savenko Mikhail",
+    "developer": "Frontend developer"
+  },
+  "startSection": {
+    "subTitle": "GraphiQL is a playground/IDE for graphQL requests.",
+    "description": "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.",
+    "columns": [
+      {
+        "name": "Send a GraphQL query to your API and get exactly what you need, nothing more and nothing less.",
+        "value": "Ask for what you need"
+      },
+      {
+        "name": "While typical REST APIs require loading from multiple URLs, GraphQL APIs get all the data your app needs in a single request.",
+        "value": "Single request"
+      },
+      {
+        "name": "Add new fields and types to your GraphQL API without impacting existing queries.",
+        "value": "Evolve your API"
+      },
+      {
+        "name": "Facebook`s mobile apps have been powered by GraphQL since 2012. A GraphQL now available in many environments.",
+        "value": "Who`s using GraphQL?"
+      }
+    ]
   }
 }

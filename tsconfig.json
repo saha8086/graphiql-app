@@ -16,6 +16,7 @@
       "@services/*": ["./src/services/*"],
       "@utils/*": ["./src/utils/*"],
       "@consts/*": ["./src/constants/*"]
+      "@utils/*": ["./src/utils/*"]
     },
     "allowJs": false,
     "forceConsistentCasingInFileNames": true,
