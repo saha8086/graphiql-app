@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "fdev": "firebase emulators:start & npm run dev",
+    "firebase": "firebase emulators:start",
     "build": "npm run lint && vite build",
     "preview": "vite preview",
     "test": "vitest",

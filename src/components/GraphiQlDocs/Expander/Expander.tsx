@@ -82,11 +82,9 @@ const isDoubleOfType = (node: ReturnType | ReturnTypeArray) => {
 
 const expandType = (typeNode: ReturnType | ReturnTypeArray): void => {
   let nextPageName = '';
-  console.log('Trying to expand this - ', typeNode);
   let pageToDisplay: ReactNode[];
   const fields: object | undefined = (typeNode as ReturnType)._fields;
   if (fields) {
-    console.log('Fields??');
     nextPageName = (typeNode as ReturnType).name;
     // if true => composed type
     pageToDisplay = iterateObject((args: IterateObjArgs) => {
@@ -128,7 +126,6 @@ const expandType = (typeNode: ReturnType | ReturnTypeArray): void => {
   } else {
     //else it's an array type
     const typeOf = isDoubleOfType(typeNode) || isOfType(typeNode);
-    console.log(typeOf);
     if (typeOf) {
       expandType(typeOf);
       return;
@@ -154,7 +151,6 @@ const iterateObject = (callBack: IterateObjCallBack, node: object | undefined): 
   const keys = Object.keys(node);
   const result: ReactNode[] = [];
   callBack({ keys, entries, result });
-  console.log(entries);
   return result;
 };
 

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 export interface SignOutButtonProps {
   className?: string;
@@ -12,7 +13,7 @@ export const SignOutButton: FC<SignOutButtonProps> = (props) => {
 
   return (
     <button {...props} type="button">
-      {t('sign-out-button')}
+      <Link to="/">{t('sign-out-button')}</Link>
     </button>
   );
 };

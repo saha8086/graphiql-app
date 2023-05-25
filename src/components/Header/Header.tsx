@@ -16,12 +16,14 @@ export const Header: FC = () => {
   return (
     <header className="sticky transition-all flex justify-end w-screen z-10 top-0 p-4 bg-slate-200 dark:bg-slate-800">
       {authorized ? (
-        <SignOutButton className={buttonClassName} onClick={signOut} />
+        <>
+          <SignOutButton className={buttonClassName} onClick={signOut} />
+          <GraphiQlButton className={`${buttonClassName} mx-4`} />
+        </>
       ) : (
         <div>
           <SignInButton className={buttonClassName} />
           <SignUpButton className={`${buttonClassName} mx-4`} />
-          <GraphiQlButton className={`${buttonClassName} mx-4`} />
         </div>
       )}
       <ChangeLanguage className={buttonClassName} />
