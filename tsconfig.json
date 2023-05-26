@@ -15,7 +15,7 @@
       "@routes/*": ["./src/routes/*"],
       "@services/*": ["./src/services/*"],
       "@utils/*": ["./src/utils/*"],
-      "@consts/*": ["./src/constants/*"]
+      "@consts/*": ["./src/constants/*"],
       "@utils/*": ["./src/utils/*"]
     },
     "allowJs": false,
