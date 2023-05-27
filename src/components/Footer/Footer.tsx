@@ -3,7 +3,7 @@ import DEVELOPERS from 'src/constants/developers';
 
 export const Footer: FC = () => {
   return (
-    <footer className="w-full flex justify-between p-2 items-center bg-white dark:bg-slate-600 shadow">
+    <footer className="w-full flex justify-evenly p-2 items-center bg-white dark:bg-slate-600 shadow">
       <p className="font-bold">2023</p>
       <ul className="flex gap-5">
         {DEVELOPERS.map((developer) => {
