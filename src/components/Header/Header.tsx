@@ -6,23 +6,22 @@ import { SignInButton } from '@components/SignInButton/SignInButton';
 import { SignUpButton } from '@components/SignUpButton/SignUpButton';
 import { ChangeLanguage } from '@components/ChangeLanguage/ChangeLanguage';
 
+import styles from './Header.module.css';
+
 export const Header: FC = () => {
   const [authorized, signOut] = useAuth();
 
-  const buttonClassName =
-    'border rounded p-2 border-white hover:bg-slate-300 dark:hover:bg-slate-700';
-
   return (
-    <header className="sticky transition-all flex justify-end w-screen z-10 top-0 p-4 bg-slate-200 dark:bg-slate-800">
+    <header className={styles.header}>
       {authorized ? (
-        <SignOutButton className={`${buttonClassName} mx-4`} onClick={signOut} />
+        <SignOutButton className={styles.button} onClick={signOut} />
       ) : (
-        <div>
-          <SignInButton className={buttonClassName} />
-          <SignUpButton className={`${buttonClassName} mx-4`} />
-        </div>
+        <>
+          <SignInButton className={styles.button} />
+          <SignUpButton className={styles.button} />
+        </>
       )}
-      <ChangeLanguage className={buttonClassName} />
+      <ChangeLanguage className={styles.button} />
     </header>
   );
 };

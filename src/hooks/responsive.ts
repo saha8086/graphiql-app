@@ -1,6 +1,6 @@
 import { useBreakpointValue as useBreakpoint, useMediaQuery } from '@chakra-ui/react';
 
-import { BREAKPOINTS } from '@consts/breakpoint';
+import { BREAKPOINTS } from '@consts/breakpoints';
 
 export const useBreakpointValue = () => useBreakpoint(BREAKPOINTS);
 
@@ -8,7 +8,7 @@ export const useViewportWidth = () => {
   const [isMobile, isTablet, isDesktop] = useMediaQuery([
     `(max-width: ${BREAKPOINTS.md})`,
     `(min-width: ${BREAKPOINTS.md}) and (max-width: ${BREAKPOINTS.xl})`,
-    `(min-width: ${BREAKPOINTS.xl}) and (max-width: ${BREAKPOINTS.xxl})`,
+    `(min-width: ${BREAKPOINTS.xl}) and (max-width: ${BREAKPOINTS['2xl']})`,
   ]);
 
   return {
@@ -29,6 +29,6 @@ export const useResponsive = () => {
     md: BREAKPOINTS.md === value,
     lg: BREAKPOINTS.lg === value,
     xl: BREAKPOINTS.xl === value,
-    xxl: BREAKPOINTS.xxl === value,
+    xxl: BREAKPOINTS['2xl'] === value,
   };
 };

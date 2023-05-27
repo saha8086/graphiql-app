@@ -8,5 +8,5 @@ export const BREAKPOINTS = {
   /** 1280px */
   xl: '80rem',
   /** 1536px */
-  xxl: '96rem',
+  '2xl': '96rem', // keep this property name backward compatible with Tailwind
 } as const;
