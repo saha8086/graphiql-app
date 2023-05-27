@@ -10,9 +10,18 @@ import { router } from '@routes/router';
 import './i18n';
 import './index.css';
 
+import { extendTheme, ChakraTheme } from '@chakra-ui/react';
+
+const theme = extendTheme({
+  config: {
+    initialColorMode: 'system',
+    useSystemColorMode: true,
+  },
+} satisfies Partial<ChakraTheme>);
+
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Provider store={store}>
         <RouterProvider router={router} />
       </Provider>
