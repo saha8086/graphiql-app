@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "firebase": "firebase emulators:start",
     "build": "npm run lint && vite build",
     "preview": "vite preview",
     "test": "vitest",

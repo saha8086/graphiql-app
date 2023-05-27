@@ -11,6 +11,7 @@
   "sign-in-button": "Войти",
   "sign-out-button": "Выйти",
   "sign-up-button": "Зарегистрироваться",
+  "graphi-ql-button": "GraphiQl",
   "auth-form": {
     "email": "Введите вашу электронную почту",
     "password": "Введите ваш пароль",
