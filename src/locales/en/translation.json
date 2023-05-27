@@ -138,5 +138,6 @@
     "value": "Header value",
     "add": "Add new Header"
   },
-  "response": "Response"
+  "response": "Response",
+  "request": "Request"
 }

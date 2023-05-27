@@ -14,6 +14,8 @@ export interface EditorProps {
   value: string;
 }
 
+export type EditorRef = ReactCodeMirrorRef;
+
 export const Editor = forwardRef<ReactCodeMirrorRef, EditorProps>(
   (
     {
@@ -47,7 +49,7 @@ export const Editor = forwardRef<ReactCodeMirrorRef, EditorProps>(
         ref={ref}
         theme={EDITOR_THEMES[theme ?? 'light']}
         value={value}
-        maxHeight="100vh"
+        maxHeight="80vh"
       />
     );
   }

@@ -6,7 +6,7 @@ import NotFoundPage from '@pages/NotFoundPage';
 
 const App = withLoading(lazy(() => import('@app/App')));
 const WelcomePage = withLoading(lazy(() => import('@pages/WelcomePage')));
-const GraphQLPage = withLoading(lazy(() => import('@pages/GraphQLPage')));
+const GraphQLPage = withLoading(lazy(() => import('@pages/GraphQLPage/GraphQLPage')));
 const SignInPage = withLoading(lazy(() => import('@pages/SignInPage/SignInPage')));
 const SignUpPage = withLoading(lazy(() => import('@pages/SignUpPage/SignUpPage')));
 
