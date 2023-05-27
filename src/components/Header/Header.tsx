@@ -5,6 +5,7 @@ import { SignOutButton } from '@components/SignOutButton/SignOutButton';
 import { SignInButton } from '@components/SignInButton/SignInButton';
 import { SignUpButton } from '@components/SignUpButton/SignUpButton';
 import { ChangeLanguage } from '@components/ChangeLanguage/ChangeLanguage';
+import { GraphiQlButton } from '@components/GraphiQlButton/GraphiQlButton';
 
 import styles from './Header.module.css';
 
@@ -14,7 +15,10 @@ export const Header: FC = () => {
   return (
     <header className={styles.header}>
       {authorized ? (
-        <SignOutButton className={styles.button} onClick={signOut} />
+        <>
+          <SignOutButton className={styles.button} onClick={signOut} />
+          <GraphiQlButton className={styles.button} />
+        </>
       ) : (
         <>
           <SignInButton className={styles.button} />
