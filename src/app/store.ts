@@ -16,7 +16,12 @@ export const store = configureStore({
         // Ignore these action types
         ignoredActions: ['openPage', 'docsPages/openPage', 'docsPages/setSchema'],
         // Ignore these field paths in all actions
-        ignoredActionPaths: ['docsPages.openedPages', 'payload.timestamp'],
+        ignoredActionPaths: [
+          'docsPages.openedPages',
+          'payload.timestamp',
+          'meta.baseQueryMeta.request',
+          'meta.baseQueryMeta.response',
+        ],
         // Ignore these paths in the state
         ignoredPaths: ['docsPages.openedPages', 'docsPages.schema'],
       },

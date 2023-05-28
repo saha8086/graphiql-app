@@ -56,7 +56,7 @@ export const AuthForm: FC<AuthFormProps> = ({ useAuth }) => {
       onSubmit={handleSubmit(async (data) => {
         const credentials = await auth(data.email, data.password);
         if (credentials) {
-          navigate('/');
+          navigate('/graphql');
         }
       })}
     >
@@ -68,7 +68,8 @@ export const AuthForm: FC<AuthFormProps> = ({ useAuth }) => {
           {...register('email', {
             required: t('auth-form.validate.required'),
             pattern: {
-              value: /\w+@\w+\.\w+/g,
+              // https://www.regular-expressions.info/email.html
+              value: /^[\w.%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i,
               message: t('auth-form.validate.email.pattern'),
             },
           })}

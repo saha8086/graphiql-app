@@ -4,9 +4,9 @@
     "and": "и"
   },
   "change-language": "Поменять язык",
-  "sign-in-button": "Войти",
-  "sign-out-button": "Выйти",
-  "sign-up-button": "Зарегистрироваться",
+  "sign-in": "Войти",
+  "sign-out": "Выйти",
+  "sign-up": "Зарегистрироваться",
   "graphi-ql-button": "GraphiQl",
   "auth-form": {
     "email": "Введите вашу электронную почту",

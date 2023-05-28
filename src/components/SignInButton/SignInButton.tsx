@@ -12,7 +12,7 @@ export const SignInButton: FC<SignInButtonProps> = (props) => {
 
   return (
     <button {...props} type="button">
-      <Link to="/sign-in">{t('sign-in-button')}</Link>
+      <Link to="/sign-in">{t('sign-in')}</Link>
     </button>
   );
 };

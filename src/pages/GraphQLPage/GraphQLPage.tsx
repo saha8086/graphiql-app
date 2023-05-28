@@ -1,4 +1,4 @@
-import { FC, useRef, useCallback } from 'react';
+import { FC, useRef, useCallback, useEffect } from 'react';
 
 import { EditorRef } from '@components/Editor/Editor';
 import { useAppSelector } from '@hooks/redux';
@@ -9,6 +9,8 @@ import { useResponsive } from '@hooks/responsive';
 import { selectBaseUrl } from './components/InputURL/InputURL.slice';
 import { Desktop } from './layouts/Desktop';
 import { Mobile } from './layouts/Mobile';
+import { useAuth } from '@hooks/authentication';
+import { useNavigate } from 'react-router-dom';
 
 const GraphQLPage: FC = () => {
   const [callApi, { error: errorResponse, data: response, isLoading }] = useLazyGraphQLQuery();
@@ -20,6 +22,15 @@ const GraphQLPage: FC = () => {
 
   const queryEditorRef = useRef<EditorRef>(null);
   const variablesEditorRef = useRef<EditorRef>(null);
+
+  const [authorized] = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!authorized) {
+      navigate('/sign-in');
+    }
+  }, [authorized, navigate]);
 
   const onRunClick = useCallback(async () => {
     const query = queryEditorRef.current?.view?.state?.doc?.toJSON();

@@ -4,9 +4,9 @@
     "and": "and"
   },
   "change-language": "Change language",
-  "sign-in-button": "Sign In",
-  "sign-out-button": "Sign Out",
-  "sign-up-button": "Sign Up",
+  "sign-in": "Sign In",
+  "sign-out": "Sign Out",
+  "sign-up": "Sign Up",
   "graphi-ql-button": "GraphiQl",
   "auth-form": {
     "email": "Enter your email",

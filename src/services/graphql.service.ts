@@ -49,8 +49,6 @@ export const graphqlApi = createApi({
   }),
 });
 
-export const introspectionMatchFulfilled = graphqlApi.endpoints.introspection.matchFulfilled;
-
 export const {
   useGraphQLQuery,
   useLazyGraphQLQuery,
