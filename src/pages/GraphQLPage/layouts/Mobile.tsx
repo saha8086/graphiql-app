@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { Button, Box, SimpleGrid, HStack, Divider } from '@chakra-ui/react';
-import { VscPlay } from 'react-icons/vsc';
+import { Box, SimpleGrid, HStack, Divider } from '@chakra-ui/react';
 
 import { HeadersEditor } from '@components/HeadersEditor/HeadersEditor';
 import { InputURL } from '@pages/GraphQLPage/components/InputURL/InputURL';

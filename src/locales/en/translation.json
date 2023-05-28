@@ -132,7 +132,6 @@
     "missing-recaptcha-version": "missing recaptcha version",
     "invalid-recaptcha-version": "invalid recaptcha version",
     "invalid-req-type": "invalid request type"
-
   },
   "headers": {
     "caption": "Request headers",
