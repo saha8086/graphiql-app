@@ -1,34 +1,29 @@
-import { useBreakpointValue as useBreakpoint, useMediaQuery } from '@chakra-ui/react';
+import {
+  useBreakpointValue as baseUseBreakpointValue,
+  useBreakpoint,
+  useMediaQuery,
+} from '@chakra-ui/react';
 
-import { BREAKPOINTS } from '@consts/breakpoints';
+import { BREAKPOINTS, BreakpointType } from '@consts/breakpoints';
 
-export const useBreakpointValue = () => useBreakpoint(BREAKPOINTS);
+export const useBreakpointValue = <T>(values: Partial<Record<BreakpointType, T>>) =>
+  baseUseBreakpointValue(values, { ssr: false });
 
-export const useViewportWidth = () => {
-  const [isMobile, isTablet, isDesktop] = useMediaQuery([
-    `(max-width: ${BREAKPOINTS.md})`,
-    `(min-width: ${BREAKPOINTS.md}) and (max-width: ${BREAKPOINTS.xl})`,
-    `(min-width: ${BREAKPOINTS.xl}) and (max-width: ${BREAKPOINTS['2xl']})`,
-  ]);
+export const useCurrentBreakpoint = () => useBreakpoint({ ssr: false }) as BreakpointType;
+
+export const useResponsive = () => {
+  const [isMobile, isTablet, isDesktop] = useMediaQuery(
+    [
+      `(max-width: ${BREAKPOINTS.md})`,
+      `(min-width: ${BREAKPOINTS.md}) and (max-width: ${BREAKPOINTS.xl})`,
+      `(min-width: ${BREAKPOINTS.xl}) and (max-width: ${BREAKPOINTS['2xl']})`,
+    ],
+    { ssr: false }
+  );
 
   return {
     isMobile,
     isTablet,
     isDesktop,
-  };
-};
-
-export const useResponsive = () => {
-  const value = useBreakpointValue();
-
-  const viewport = useViewportWidth();
-
-  return {
-    ...viewport,
-    sm: BREAKPOINTS.sm === value,
-    md: BREAKPOINTS.md === value,
-    lg: BREAKPOINTS.lg === value,
-    xl: BREAKPOINTS.xl === value,
-    xxl: BREAKPOINTS['2xl'] === value,
-  };
+  } as const;
 };

@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '@hooks/redux';
 import { selectApiList, selectBaseUrl, setURL } from './InputURL.slice';
 import { ProtocolType, validateURL } from '@utils/url';
 import { Datalist } from '@components/Datalist/Datalist';
+import { useCurrentBreakpoint } from '@hooks/responsive';
 
 const format = 'text/plain';
 
@@ -35,6 +36,7 @@ export const InputURL = forwardRef<HTMLInputElement>((_, ref) => {
   const apiList = useAppSelector(selectApiList);
   const url = useAppSelector(selectBaseUrl);
   const apiDatalistId = useId();
+  const breakpoint = useCurrentBreakpoint();
 
   const onClick = useCallback(async () => {
     try {
@@ -56,13 +58,17 @@ export const InputURL = forwardRef<HTMLInputElement>((_, ref) => {
 
   return (
     <InputGroup>
-      <InputLeftAddon>{`${protocol}//`}</InputLeftAddon>
+      <InputLeftAddon paddingInline={breakpoint === 'xl' ? '1rem' : '0.5rem'}>
+        {`${protocol}//`}
+      </InputLeftAddon>
       <Input
         ref={ref}
         onCopy={onCopy}
         onPaste={onPaste}
         onChange={onChange}
         list={apiDatalistId}
+        type="url"
+        aria-label="URL"
         defaultValue={url.replace(`${protocol}//`, '')}
       />
       <Datalist

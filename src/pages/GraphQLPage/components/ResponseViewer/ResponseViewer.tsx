@@ -25,6 +25,7 @@ export const ResponseViewer: FC<ResponseViewerProps> = ({
         readOnly
         lang="json"
         className={editorClassName}
+        aria-label={t('response')}
       />
     </Box>
   );

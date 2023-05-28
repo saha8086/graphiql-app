@@ -24,6 +24,7 @@ export const RequestEditor = forwardRef<EditorRef, RequestEditorProps>(
           foldGutter
           lang="graphql"
           className={editorClassName}
+          aria-label={t('request')}
         />
       </Box>
     );

@@ -141,6 +141,8 @@
   },
   "response": "Ответ на запрос",
   "request": "Запрос",
+  "run-request": "Выполнить запрос",
+  "variables": "Переменные",
   "start": "Начать",
   "teamSection": {
     "title": "Наша команда",

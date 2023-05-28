@@ -12,6 +12,7 @@ export interface EditorProps {
   foldGutter?: boolean;
   tabWidth?: number;
   value: string;
+  'aria-label': string;
 }
 
 export type EditorRef = ReactCodeMirrorRef;
@@ -27,6 +28,7 @@ export const Editor = forwardRef<ReactCodeMirrorRef, EditorProps>(
       foldGutter = false,
       tabWidth = 2,
       value,
+      'aria-label': label,
     },
     ref
   ) => {
@@ -50,6 +52,9 @@ export const Editor = forwardRef<ReactCodeMirrorRef, EditorProps>(
         theme={EDITOR_THEMES[theme ?? 'light']}
         value={value}
         maxHeight="80vh"
+        role="textbox"
+        aria-multiline
+        aria-label={label}
       />
     );
   }

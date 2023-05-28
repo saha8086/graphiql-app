@@ -19,6 +19,7 @@ import { VscTrash, VscAdd } from 'react-icons/vsc';
 import { Datalist } from '@components/Datalist/Datalist';
 import { HEADERS, HEADER_MAX_LENGTH } from '@consts/headers';
 import { isValidHeaderEntry, validateHeaders } from '@utils/fetch';
+import { useBreakpointValue } from '@hooks/responsive';
 
 interface FormValues {
   headers: {
@@ -71,6 +72,12 @@ export const HeadersEditor: FC<HeadersEditorProps> = ({ onSubmit }) => {
     [onSubmit]
   );
 
+  const TdPaddingInline = useBreakpointValue({
+    lg: 4,
+    md: 2,
+    base: 1,
+  });
+
   return (
     <form onSubmit={handleSubmit(submitHandler)}>
       <TableContainer>
@@ -79,18 +86,20 @@ export const HeadersEditor: FC<HeadersEditorProps> = ({ onSubmit }) => {
           <Tbody>
             {fields.map((field, index) => (
               <Tr key={field.id}>
-                <Td className="flex space-x-8">
+                <Td paddingInline={TdPaddingInline}>
                   <Checkbox {...register(`headers.${index}.checked`)} />
+                </Td>
+                <Td paddingInline={TdPaddingInline}>
                   <Input
                     {...register(`headers.${index}.name`)}
                     placeholder={t('headers.name')}
                     list={headersDatalistId}
                   />
                 </Td>
-                <Td>
+                <Td paddingInline={TdPaddingInline}>
                   <Input {...register(`headers.${index}.value`)} placeholder={t('headers.value')} />
                 </Td>
-                <Td>
+                <Td paddingInline={TdPaddingInline}>
                   <IconButton
                     aria-label="Delete"
                     icon={<VscTrash />}
@@ -102,7 +111,7 @@ export const HeadersEditor: FC<HeadersEditorProps> = ({ onSubmit }) => {
           </Tbody>
           <Tfoot>
             <Tr>
-              <Th>
+              <Th colSpan={4}>
                 <Button
                   leftIcon={<VscAdd />}
                   onClick={() =>

@@ -4,7 +4,7 @@ import { EditorRef } from '@components/Editor/Editor';
 import { useAppSelector } from '@hooks/redux';
 import { useLazyGraphQLQuery, useLazyIntrospectionQuery } from '@services/graphql.service';
 import { validateGraphQLSync } from '@utils/graphql';
-import { useViewportWidth } from '@hooks/responsive';
+import { useResponsive } from '@hooks/responsive';
 
 import { selectBaseUrl } from './components/InputURL/InputURL.slice';
 import { Desktop } from './layouts/Desktop';
@@ -53,7 +53,7 @@ const GraphQLPage: FC = () => {
     }
   }, [baseUrl, callApi, getIntrospection]);
 
-  const responsive = useViewportWidth();
+  const responsive = useResponsive();
 
   const Layout = responsive.isMobile ? Mobile : Desktop;
 

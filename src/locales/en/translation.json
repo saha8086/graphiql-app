@@ -142,6 +142,8 @@
   },
   "response": "Response",
   "request": "Request",
+  "run-request": "Run request",
+  "variables": "Variables",
   "start": "Start",
   "teamSection": {
     "title": "Meet our team",
