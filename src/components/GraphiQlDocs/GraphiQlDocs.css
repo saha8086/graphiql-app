@@ -18,6 +18,12 @@
   color: hsl(40, 100%, 46%);
 }
 
+@media (prefers-color-scheme: dark) {
+  .gray-text {
+    color: hsl(219, 35%, 57%);
+  }
+}
+
 .docs .queryType:hover,
 .docs .yellow-text:hover,
 .docs .gray-text.back:hover {

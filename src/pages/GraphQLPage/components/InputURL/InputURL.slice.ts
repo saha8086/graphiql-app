@@ -1,19 +1,16 @@
 import { RootState } from '@app/store';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { API_ENDPOINTS } from '@consts/ApiEndpoint';
+
 interface InitialState {
   url: string;
   apiList: string[];
 }
 
 const initialState: InitialState = {
-  url: 'https://graphqlpokemon.favware.tech/v7',
-  apiList: [
-    'https://graphqlpokemon.favware.tech/v7',
-    'https://graphql-pokeapi.graphcdn.app/',
-    'https://api.geographql.rudio.dev/graphql',
-    // 'https://dropmail.me/api/graphql/' /* + token */,
-  ],
+  url: API_ENDPOINTS[0],
+  apiList: [...API_ENDPOINTS],
 };
 
 export const inputURLSlice = createSlice({

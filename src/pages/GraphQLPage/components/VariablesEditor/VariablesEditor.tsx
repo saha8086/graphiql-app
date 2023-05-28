@@ -1,20 +1,29 @@
 import { forwardRef } from 'react';
 
-import { Editor, EditorRef } from '@components/Editor/Editor';
+import { Dimensions, Editor, EditorRef } from '@components/Editor/Editor';
 import { useTranslation } from 'react-i18next';
 import { Box } from '@chakra-ui/react';
 
-export interface VariablesEditorProps {
+export interface VariablesEditorProps extends Dimensions {
   className?: string;
 }
 
-export const VariablesEditor = forwardRef<EditorRef, VariablesEditorProps>(({ className }, ref) => {
-  const { t } = useTranslation();
+export const VariablesEditor = forwardRef<EditorRef, VariablesEditorProps>(
+  ({ className, ...dimensions }, ref) => {
+    const { t } = useTranslation();
 
-  return (
-    <Box>
-      <h2>{t('variables')}</h2>
-      <Editor value="" ref={ref} lang="json" className={className} aria-label={t('variables')} />
-    </Box>
-  );
-});
+    return (
+      <Box>
+        <h2>{t('variables')}</h2>
+        <Editor
+          value=""
+          ref={ref}
+          lang="json"
+          className={className}
+          aria-label={t('variables')}
+          {...dimensions}
+        />
+      </Box>
+    );
+  }
+);

@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 
-import { Editor } from '@components/Editor/Editor';
+import { Dimensions, Editor } from '@components/Editor/Editor';
 import { Box } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
-export interface ResponseViewerProps {
+export interface ResponseViewerProps extends Dimensions {
   value: object | undefined;
   boxClassName?: string;
   editorClassName?: string;
@@ -14,6 +14,7 @@ export const ResponseViewer: FC<ResponseViewerProps> = ({
   value,
   boxClassName,
   editorClassName,
+  ...dimensions
 }) => {
   const { t } = useTranslation();
 
@@ -26,6 +27,7 @@ export const ResponseViewer: FC<ResponseViewerProps> = ({
         lang="json"
         className={editorClassName}
         aria-label={t('response')}
+        {...dimensions}
       />
     </Box>
   );

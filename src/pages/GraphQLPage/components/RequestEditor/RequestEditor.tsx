@@ -1,16 +1,16 @@
 import { forwardRef } from 'react';
 
-import { Editor, EditorRef } from '@components/Editor/Editor';
+import { Dimensions, Editor, EditorRef } from '@components/Editor/Editor';
 import { useTranslation } from 'react-i18next';
 import { Box } from '@chakra-ui/react';
 
-export interface RequestEditorProps {
+export interface RequestEditorProps extends Dimensions {
   boxClassName?: string;
   editorClassName?: string;
 }
 
 export const RequestEditor = forwardRef<EditorRef, RequestEditorProps>(
-  ({ boxClassName, editorClassName }, ref) => {
+  ({ boxClassName, editorClassName, ...dimensions }, ref) => {
     const { t } = useTranslation();
 
     return (
@@ -25,6 +25,7 @@ export const RequestEditor = forwardRef<EditorRef, RequestEditorProps>(
           lang="graphql"
           className={editorClassName}
           aria-label={t('request')}
+          {...dimensions}
         />
       </Box>
     );

@@ -5,6 +5,6 @@ export type ColorType =
   | `rgb(${number}, ${number}, ${number})`
   | `rgba(${number}, ${number}, ${number}, ${number})`;
 
-export type DistanceUnitType = 'px' | 'rem';
+export type DistanceUnitType = 'px' | 'rem' | 'vh';
 
 export type DistanceUnit = `${number}${DistanceUnitType}` | '0';
