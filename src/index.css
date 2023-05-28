@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .logo {
+    @apply h-24 p-6 will-change-[filter] transition-[filter] delay-300;
+  }
+
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded-lg border border-solid border-transparent py-[0.6rem] px-[1.2rem] font-medium bg-[#f9f9f9] dark:bg-[#1a1a1a] cursor-pointer transition hover:border-[#646cff] focus:focus-visible:outline-4;
+  }
+}
+
+@layer components {
+  .background-gradient {
+    clip-path: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)';
+  }
+
+  .introduction-background {
+    @apply aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20 background-gradient;
+  }
+}
