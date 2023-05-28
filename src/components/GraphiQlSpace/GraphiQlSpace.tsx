@@ -29,10 +29,10 @@ function fetcher(params: FetcherType): Promise<ApiResponse> {
     },
     body: JSON.stringify(params),
   })
-    .then(function (response) {
+    .then((response) => {
       return response.text();
     })
-    .then(function (responseBody) {
+    .then((responseBody) => {
       try {
         const data = JSON.parse(responseBody) as ApiResponse['data'];
         return { data };

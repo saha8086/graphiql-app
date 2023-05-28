@@ -41,6 +41,7 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+    "prefer-arrow-callback": [ "error", { "allowUnboundThis": false } ],
     "react/jsx-no-constructed-context-values": "warn",
     "react/jsx-no-useless-fragment": "warn",
     "react/no-multi-comp": "warn",
