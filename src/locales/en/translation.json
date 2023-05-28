@@ -138,6 +138,13 @@
     "invalid-req-type": "invalid request type"
 
   },
+  "headers": {
+    "caption": "Request headers",
+    "name": "Header name",
+    "value": "Header value",
+    "add": "Add new Header"
+  },
+  "response": "Response",
   "start": "Start",
   "teamSection": {
     "title": "Meet our team",

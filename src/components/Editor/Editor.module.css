@@ -1,0 +1,51 @@
+.lineComment {
+  @apply text-green-800 dark:text-green-600;
+}
+
+.variableName {
+  @apply text-sky-700 dark:text-cyan-300;
+}
+
+.typeName {
+  @apply text-[#085] dark:text-[#e5c07b];
+}
+
+.propertyName {
+  @apply text-[#8a4248] dark:text-[#e66f78];
+}
+
+.attributeName {
+  @apply text-inherit dark:text-sky-400;
+}
+
+.className {
+  @apply text-[#777841] dark:text-[#aeb05f];
+}
+
+.string {
+  @apply text-[#4a5e3a] dark:text-[#9ac57a];
+}
+
+.number {
+  @apply text-amber-700 dark:text-[#e3e57b];
+}
+
+.bool {
+  @apply text-[#219] dark:text-[#d19a66];
+}
+
+.keyword {
+  @apply text-[#708] dark:text-[#e188fb];
+}
+
+.operator {
+  @apply text-[#2d6065] dark:text-[#57b9c5];
+}
+
+.punctuation {
+  @apply text-inherit;
+}
+
+.invalid {
+  @apply text-[red];
+}
