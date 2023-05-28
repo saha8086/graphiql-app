@@ -12,7 +12,7 @@ export const SignUpButton: FC<SignUpButtonProps> = (props) => {
 
   return (
     <button {...props} type="button">
-      <Link to="/sign-up">{t('sign-up-button')}</Link>
+      <Link to="/sign-up">{t('sign-up')}</Link>
     </button>
   );
 };

@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import docsReducer from '../components/GraphiQlDocs/Docs.slice';
 
+import { graphqlApi } from '@services/graphql.service';
+import { inputURLSlice } from '@pages/GraphQLPage/components/InputURL/InputURL.slice';
+
 export const store = configureStore({
-  // todo: add slices using createSlice
   reducer: {
+    [graphqlApi.reducerPath]: graphqlApi.reducer,
+    [inputURLSlice.name]: inputURLSlice.reducer,
     docsPages: docsReducer,
   },
   middleware: (getDefaultMiddleware) =>
@@ -12,11 +16,16 @@ export const store = configureStore({
         // Ignore these action types
         ignoredActions: ['openPage', 'docsPages/openPage', 'docsPages/setSchema'],
         // Ignore these field paths in all actions
-        ignoredActionPaths: ['docsPages.openedPages', 'payload.timestamp'],
+        ignoredActionPaths: [
+          'docsPages.openedPages',
+          'payload.timestamp',
+          'meta.baseQueryMeta.request',
+          'meta.baseQueryMeta.response',
+        ],
         // Ignore these paths in the state
         ignoredPaths: ['docsPages.openedPages', 'docsPages.schema'],
       },
-    }),
+    }).concat(graphqlApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

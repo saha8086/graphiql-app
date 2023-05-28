@@ -13,7 +13,7 @@ export const SignOutButton: FC<SignOutButtonProps> = (props) => {
 
   return (
     <button {...props} type="button">
-      <Link to="/">{t('sign-out-button')}</Link>
+      <Link to="/">{t('sign-out')}</Link>
     </button>
   );
 };

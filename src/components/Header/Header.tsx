@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 import { useAuth } from '@hooks/authentication';
 import { SignOutButton } from '@components/SignOutButton/SignOutButton';
@@ -7,26 +8,34 @@ import { SignUpButton } from '@components/SignUpButton/SignUpButton';
 import { ChangeLanguage } from '@components/ChangeLanguage/ChangeLanguage';
 import { GraphiQlButton } from '@components/GraphiQlButton/GraphiQlButton';
 
+import styles from './Header.module.css';
+
+import GraphiQL from '/GraphiQL.svg';
+
 export const Header: FC = () => {
   const [authorized, signOut] = useAuth();
 
-  const buttonClassName =
-    'border rounded p-2 border-white hover:bg-slate-300 dark:hover:bg-slate-700';
-
   return (
-    <header className="sticky transition-all flex justify-end w-screen z-10 top-0 p-4 bg-slate-200 dark:bg-slate-800">
-      {authorized ? (
-        <>
-          <SignOutButton className={buttonClassName} onClick={signOut} />
-          <GraphiQlButton className={`${buttonClassName} mx-4`} />
-        </>
-      ) : (
-        <div>
-          <SignInButton className={buttonClassName} />
-          <SignUpButton className={`${buttonClassName} mx-4`} />
-        </div>
-      )}
-      <ChangeLanguage className={buttonClassName} />
+    <header className={styles.header}>
+      <h1 className="self-center font-bold hover:text-blue-500 cursor-pointer">
+        <Link to="/">
+          <img src={GraphiQL} alt="GraphiQL" className="h-8 dark:invert" />
+        </Link>
+      </h1>
+      <div className="space-x-4">
+        {authorized ? (
+          <>
+            <SignOutButton className={styles.button} onClick={signOut} />
+            <GraphiQlButton className={styles.button} />
+          </>
+        ) : (
+          <>
+            <SignInButton className={styles.button} />
+            <SignUpButton className={styles.button} />
+          </>
+        )}
+        <ChangeLanguage className={styles.button} />
+      </div>
     </header>
   );
 };

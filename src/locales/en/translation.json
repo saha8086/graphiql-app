@@ -3,14 +3,10 @@
     "edit": "Edit",
     "and": "and"
   },
-  "change-language": "change language",
-  "sign-in-button": "sign in",
-  "sign-out-button": "sign out",
-  "sign-up-button": "sign up",
   "change-language": "Change language",
-  "sign-in-button": "Sign In",
-  "sign-out-button": "Sign Out",
-  "sign-up-button": "Sign Up",
+  "sign-in": "Sign In",
+  "sign-out": "Sign Out",
+  "sign-up": "Sign Up",
   "graphi-ql-button": "GraphiQl",
   "auth-form": {
     "email": "Enter your email",
@@ -136,7 +132,6 @@
     "missing-recaptcha-version": "missing recaptcha version",
     "invalid-recaptcha-version": "invalid recaptcha version",
     "invalid-req-type": "invalid request type"
-
   },
   "headers": {
     "caption": "Request headers",
@@ -145,6 +140,9 @@
     "add": "Add new Header"
   },
   "response": "Response",
+  "request": "Request",
+  "run-request": "Run request",
+  "variables": "Variables",
   "start": "Start",
   "teamSection": {
     "title": "Meet our team",

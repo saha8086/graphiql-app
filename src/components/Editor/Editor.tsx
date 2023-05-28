@@ -2,8 +2,18 @@ import { forwardRef } from 'react';
 import CodeMirror, { ReactCodeMirrorRef, BasicSetupOptions } from '@uiw/react-codemirror';
 import { useColorModePreference } from '@chakra-ui/media-query';
 import { EditorLang, EDITOR_LANGUAGES, EDITOR_THEMES } from '@consts/editor';
+import { DistanceUnit } from '@interfaces/theme';
 
-export interface EditorProps {
+export interface Dimensions {
+  height?: DistanceUnit;
+  minHeight?: DistanceUnit;
+  maxHeight?: DistanceUnit;
+  width?: DistanceUnit;
+  minWidth?: DistanceUnit;
+  maxWidth?: DistanceUnit;
+}
+
+export interface EditorProps extends Dimensions {
   className?: string;
   lang?: EditorLang;
   readOnly?: boolean;
@@ -12,7 +22,10 @@ export interface EditorProps {
   foldGutter?: boolean;
   tabWidth?: number;
   value: string;
+  'aria-label': string;
 }
+
+export type EditorRef = ReactCodeMirrorRef;
 
 export const Editor = forwardRef<ReactCodeMirrorRef, EditorProps>(
   (
@@ -25,6 +38,8 @@ export const Editor = forwardRef<ReactCodeMirrorRef, EditorProps>(
       foldGutter = false,
       tabWidth = 2,
       value,
+      'aria-label': label,
+      ...dimensions
     },
     ref
   ) => {
@@ -39,6 +54,7 @@ export const Editor = forwardRef<ReactCodeMirrorRef, EditorProps>(
 
     return (
       <CodeMirror
+        {...dimensions}
         basicSetup={basicSetup}
         className={className}
         editable={!readOnly}
@@ -47,7 +63,9 @@ export const Editor = forwardRef<ReactCodeMirrorRef, EditorProps>(
         ref={ref}
         theme={EDITOR_THEMES[theme ?? 'light']}
         value={value}
-        maxHeight="100vh"
+        role="textbox"
+        aria-multiline
+        aria-label={label}
       />
     );
   }

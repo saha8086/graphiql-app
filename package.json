@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "lint:prettier": "prettier --ignore-path .gitignore --ignore-unknown --check",
-    "lint:eslint": "eslint --ignore-path .gitignore",
+    "lint:eslint": "eslint --ignore-path .gitignore --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "lint": "npm run lint:prettier -- . & npm run typecheck & npm run lint:eslint -- .",
     "prepare": "husky install"

@@ -3,14 +3,10 @@
     "edit": "Отредактируйте",
     "and": "и"
   },
-  "change-language": "поменять язык",
-  "sign-in-button": "войти",
-  "sign-out-button": "выйти",
-  "sign-up-button": "зарегистрироваться",
   "change-language": "Поменять язык",
-  "sign-in-button": "Войти",
-  "sign-out-button": "Выйти",
-  "sign-up-button": "Зарегистрироваться",
+  "sign-in": "Войти",
+  "sign-out": "Выйти",
+  "sign-up": "Зарегистрироваться",
   "graphi-ql-button": "GraphiQl",
   "auth-form": {
     "email": "Введите вашу электронную почту",
@@ -144,6 +140,9 @@
     "add": "Добавить новый заголовок"
   },
   "response": "Ответ на запрос",
+  "request": "Запрос",
+  "run-request": "Выполнить запрос",
+  "variables": "Переменные",
   "start": "Начать",
   "teamSection": {
     "title": "Наша команда",
@@ -171,7 +170,7 @@
       },
       {
         "name": "Мобильные приложения Facebook работают на GraphQL с 2012 года. Теперь GraphQL доступен во многих средах.",
-        "value": "Кто изпользует GraphQL?" 
+        "value": "Кто изпользует GraphQL?"
       }
     ]
   }

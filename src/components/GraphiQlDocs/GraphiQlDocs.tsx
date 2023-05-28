@@ -31,7 +31,7 @@ const GraphiQlDocs: FC<GraphiQlDocsProps> = ({ schema }) => {
   const pagesList = useAppSelector((state) => state.docsPages.openedPages);
 
   return (
-    <div className="docs bg-white min-w-[200px] max-w-[400px] flex flex-col grow-[0.1] shrink-[1] p-2 pr-[50px] overflow-y-scroll">
+    <div className="docs bg-white dark:bg-slate-950 min-w-[200px] max-w-[400px] flex flex-col grow-[0.1] shrink-[1] p-2 pr-[50px] overflow-y-scroll">
       {schema && pagesList[pagesList.length - 1].node}
     </div>
   );

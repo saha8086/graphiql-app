@@ -7,7 +7,7 @@
 }
 
 .gray-text {
-  color: hsl(219, 28%, 32%, .76);
+  color: hsl(219, 28%, 32%, 0.76);
 }
 
 .red-text {
@@ -18,7 +18,15 @@
   color: hsl(40, 100%, 46%);
 }
 
-.docs .queryType:hover, .docs .yellow-text:hover, .docs .gray-text.back:hover {
-cursor: pointer;
-text-decoration: underline;
+@media (prefers-color-scheme: dark) {
+  .gray-text {
+    color: hsl(219, 35%, 57%);
+  }
+}
+
+.docs .queryType:hover,
+.docs .yellow-text:hover,
+.docs .gray-text.back:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
