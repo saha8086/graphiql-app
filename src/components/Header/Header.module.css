@@ -1,0 +1,7 @@
+.header {
+  @apply sticky transition-all flex justify-center sm:justify-between z-10 top-0 p-2 space-x-3 sm:space-x-4 bg-slate-200 dark:bg-slate-800;
+}
+
+.button {
+  @apply border rounded p-1 sm:p-2 border-white hover:bg-slate-300 dark:hover:bg-slate-700;
+}
